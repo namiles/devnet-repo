@@ -1,0 +1,29 @@
+Virtual Environments
+-----------------------
+Allows specific python versions to be installed in different directory structures. 
+Allows you to lock in components and modules you use for your app into a single "package"
+
+Mac/Linux
+python3 -m venv myvenv
+source myvenv/bin/activate
+
+Windows
+py -3 -m venv myvenv
+myvenv/Scripts/activate.bat
+
+
+PIP (PyPI Respository)
+------------------------
+pip is used to install modules for Python. Pulls modules down from the PyPi Respository. 
+Modules are used to extend python functionality and help contribute to its flexibility.
+
+pip install "packagename"
+pip search "search value" --> Display name, version, and brief description of what it does
+pip install package==1.1.1 --> install a specific version
+pip install package>=1.0 --> install a version greater or equal to 1.0
+
+pip install -r requirements.txt --> file used to give pip a set of packages to isntall for an app to work
+pip freeze > requirements.txt --> populates requirements.txt file with packages being used in an app
+
+
+
