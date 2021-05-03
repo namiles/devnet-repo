@@ -12,8 +12,9 @@ print() #blank line
 # Variables
 # - must start with a letter or underscore
 # - cannot start with a number
-# - can only consist of alphanumeric characters and underscores
+# - can only consist of alphanumeric characters and underscores (a-z, A-Z, 0-9, _ underscores except for beginning, )
 # - case sensitive
+# - cannot use reserved words (False, None, True, and, as, assert, break, class, continue, def, del, elif, else, except, for, if, is, or, not, pass, return, etc.)
 # Variables are auto typed, meaning python sets it as a string, int, bool, etc automatically.
 
 age = 23
@@ -22,6 +23,9 @@ isTrue = True
 print("Hi my name is " + name + " and I am " + str(age) + " years old and this is " + str(isTrue) + ".")
 print()
 print(type(name))
+
+# Immutable objects cannot have their values changed
+# Mutable can be opened up and changed
 
 # Data Types
 # - strings: immutable
@@ -32,7 +36,6 @@ print(type(name))
 # - tuples: immutable
 # - dictionaires: mutable
 # - sets: mutable (frozen sets = immutable)
-
 
 #-------------------------------------------------------------#
 
@@ -165,6 +168,68 @@ while (count <= 10):
 else:
     print("Loop completed.")
 
+
+#-------------------------------------------------------------#
+
+print()
+print("#--------------------------Numbers and Mathematics-------------------------#")
+
+# Numbers and Mathematics
+
+# Numeric Types
+# - int:  whole numbers, no decimals
+# - float: Decimal numbers
+# - long: Only in python 2
+# - complex:
+
+# Number Ranges
+# Python 2
+#   - int limited to 32 bits - -2,147,483,648 - 2,147,483,648
+#   - long limited to 64 bits - -9,223,372,036,854,775,808 - 9,223,372,036,854,775,80/
+#
+# Python 3
+#   - int - can be any size, even greater than 64 bits
+#   - No longs in python 3
+
+# Notes:
+# - When doing math with ints and floats, python 3 converts ints to floats as necessary
+# - Python follows PEMDAS order when calculating
+
+'''
+Mathematics Operators
+x + y: sum
+x - y: subtraction
+x * y: multiplication, product of x and y
+x / y: Division, quotient of x and y
+x // y: floored quotient, rounded down
+x % y: Remainder of x/y
+'''
+
+var1 = 10
+var2 = 6
+
+print('\nMath Operators:')
+print('Addition (+): ', var1, '+', var2, '=', var1+var2)
+print('Subtraction (-): ', var1, '-', var2, '=', var1-var2)
+print('Multiplication (*): ', var1, '*', var2, '=', var1*var2)
+print('Division (/): ', var1, '/', var2, '=', var1/var2) # In python 2, result of division is always an integer compared to float in python 3
+print('Truncating/Floor Division (rounds down) (//): ', var1, '//', var2, '=', var1//var2)
+print('Modulo (remainder) (%): ', var1, '%', var2, '=', var1%var2)
 print()
 
+print(min(1,20,25,3)) #returns lowest number of given numbers
+print(max(1,2,4,8,102)) #returns largest number of given numbers
 
+# Decimal, Binary, and Hexadecimal Numbers
+# - Integers are assumed to be decimal, or base 10
+# - 0b = binary, 0x = hex, 0x = octal
+
+#Hex = 1 2 3 4 5 6 7 8 9 A B C D E F
+
+print()
+print("Binary:",0b11100000)
+print("Hex:",0xF)
+
+
+
+#-------------------------------------------------------------#
