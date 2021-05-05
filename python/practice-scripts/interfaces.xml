@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<interfaces>
+	<interface1>
+		<name>GigabitEthernet1</name>
+		<description>Modified main uplink</description>
+		<isEnabled>true</isEnabled>
+		<ipv4>
+			<address>192.168.10.1</address>
+			<mask>255.255.255.0</mask>
+		</ipv4>
+	</interface1>
+	<interface2>
+		<name>GigabitEthernet2</name>
+		<description>Backup uplink</description>
+		<isEnabled>true</isEnabled>
+		<ipv4>
+			<address>192.168.10.2</address>
+			<mask>255.255.255.0</mask>
+		</ipv4>
+	</interface2>
+</interfaces>

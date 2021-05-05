@@ -1,0 +1,22 @@
+{
+    "interfaces": {
+        "interface1": {
+            "name": "GigabitEthernet1",
+            "description": "Main uplink",
+            "isEnabled": true,
+            "ipv4": {
+                "address": "192.168.10.1",
+                "mask": "255.255.255.0"
+            }
+        },
+        "interface2": {
+            "name": "GigabitEthernet2",
+            "description": "Backup uplink",
+            "isEnabled": true,
+            "ipv4": {
+                "address": "192.168.10.2",
+                "mask": "255.255.255.0"
+            }
+        }
+    }
+}

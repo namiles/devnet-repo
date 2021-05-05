@@ -1,0 +1,1 @@
+File used to test error handling when opening a file.
