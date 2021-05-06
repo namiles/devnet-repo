@@ -4,7 +4,6 @@ import xmltodict
 import yaml
 
 '''
-File input and output
 
 Modes
 - r = open for reading (default)
@@ -16,41 +15,6 @@ Modes
 - + = Open for updating (read and write)
 
 '''
-
-#-------------------------------------------------------------#
-
-# Take file to open as a string and specify mode. readdata is an object created to store the contents of the file.
-readdata = open("textfile.txt", "r")
-
-# read() can be used to print contents
-print()
-print(readdata.read())
-print()
-
-# When using open(), you have to close the file:
-readdata.close()
-
-'''
-Keep track of opening and closing files can be annoying.
-Python provides the with statement, also called a context manager.
-It uses the open() function but doesn't require assigning to an object and automatically closes the file.
-'''
-
-with open("textfile.txt", "r") as data:
-    print(data.read())
-
-# a+ can be used to write to the file by appending. 
-
-with open("textfile.txt", "a+") as data:
-    print(data.write("\nThis line was added using python."))
-
-
-# Read file after adding the line.
-with open("textfile.txt", "r") as data:
-    print(data.read())
-print()
-
-#-------------------------------------------------------------#
 
 print("#------------------------------Parsing Data-------------------------------#")
 print()
@@ -78,12 +42,11 @@ XML
 YAML
 - Must install PyYaml module
 - pip install PyYaml
-- 
 
 '''
 
 # CSV
-print("-- Working with CSV --")
+print("#--------------- Working with CSV ---------------#")
 print()
 
 samplefile = open("routers.csv") # open CSV file
@@ -123,7 +86,7 @@ print()
 
 
 # JSON
-print("-- Working with JSON --")
+print("#--------------- Working with JSON ---------------#")
 print()
 
 '''
@@ -156,6 +119,10 @@ print()
 
 #Print dictionary after updating data
 print(interfaces_dict)
+print()
+
+#Print Individual peices of JSON
+print(interfaces_dict["interfaces"]["interface1"]["ipv4"]["address"])
 
 #Saving JSON data back to file
 with open("interfaces.json", "w") as fh:
@@ -164,7 +131,7 @@ with open("interfaces.json", "w") as fh:
 print()
 
 # XML
-print("-- Working with XML --")
+print("#--------------- Working with XML ---------------#")
 print()
 
 # Working with XML natively is confusing with Python and can be hard to grasp.
@@ -199,7 +166,7 @@ with open("interfaces.xml", "w") as data: # w to overwrite existing data
 print()
 
 # YAML
-print("-- Working with YAML --")
+print("#--------------- Working with YAML ---------------#")
 print()
 
 with open("interfaces.yaml") as data:

@@ -10,6 +10,7 @@ while True:
     else:
         print(f'\nContents of {filename}:')
         print(file_data)
+        print()
         x=0
         break
     finally: #runs regardless whether or not an error ocurred.
