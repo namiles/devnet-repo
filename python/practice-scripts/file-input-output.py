@@ -2,6 +2,7 @@ import csv
 import json
 import xmltodict
 import yaml
+import os
 
 '''
 File input and output
@@ -16,6 +17,9 @@ Modes
 - + = Open for updating (read and write)
 
 '''
+
+
+print(os.getcwd())
 
 #-------------------------------------------------------------#
 
@@ -78,7 +82,6 @@ XML
 YAML
 - Must install PyYaml module
 - pip install PyYaml
-- 
 
 '''
 
