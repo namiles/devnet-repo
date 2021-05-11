@@ -43,5 +43,11 @@ a = 5
 b = 5
 print(f'Hello, {name}')
 print(f'Five plus ten is {a+b}')
+def greet(name, question):
+    return f'Hello, {name}! {question}'
+print(greet('nick','How are you?'))
 
 print()
+
+print(__name__)
+print(type(__name__))

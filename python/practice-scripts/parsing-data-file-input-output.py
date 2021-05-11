@@ -107,6 +107,7 @@ print(interfacedata)
 
 #Convert JSON data into a dictionary
 interfaces_dict = json.loads(interfacedata)
+print(type(interfaces_dict))
 print()
 
 #Print interfaces dictionary
