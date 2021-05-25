@@ -3,7 +3,7 @@ import json
 
 print()
 
-r = requests.get('https://swapi.dev/api/people/25')
+r = requests.get('https://swapi.dev/api/people/?page=2')
 #print JSON of response object
 print(r.json())
 print(type(r))
