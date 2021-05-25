@@ -16,6 +16,7 @@ class Router:
                 f'Location:           {self.location}'
         return info
 
+# Switch class is deribed from Router class
 class Switch(Router):
     def getInfo(self):
         '''Returns information about Switch'''
