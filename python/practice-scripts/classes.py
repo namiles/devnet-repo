@@ -37,6 +37,10 @@ print(r2.getInfo())
 
 print()
 s1 = modules.Switch("Cisco Catalyst 3750","16.1","10.1.1.137","Rack 28")
+print(s1)
+print(s1.getInfo())
+s1.set_ip_address('192.168.200.120')
+print('Updated IP address:')
 print(s1.getInfo())
 
 print()

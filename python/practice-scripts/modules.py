@@ -15,6 +15,11 @@ class Router:
                 f'IP Address:         {self.ip_address}\n'\
                 f'Location:           {self.location}'
         return info
+    
+    def set_ip_address(self, s):
+        '''Set the IP address of the device'''
+        self.ip_address = s
+        print('IP address updated')
 
 # Switch class is deribed from Router class
 class Switch(Router):
