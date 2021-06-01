@@ -22,6 +22,8 @@ print()
 '''
 Parsing Data
 
+PyPi (PIP) - can be installed with apt install python3-pip in debian based disros
+
 CSV
 - Each line in CSV represents a row, and commas are used to separate individual data fields to make it easier to parse.
 - CSV module must be imported (import csv)
@@ -93,21 +95,27 @@ print()
 JSON Functions
 
 load()  - Import native JSON and convert to python dictionary from a file
-loads() - Import JSON data from a string for parsing and manipulating within program
+loads() - Load string. Import JSON data from a string for parsing and manipulating within program
 dump()  - Write JSON data from Python object to a file
-dumps() - Take JSON dictionary data and convert to a serialized string for parsing and manipulating
+dumps() - Dump string. Take JSON dictionary data and convert to a serialized string for parsing and manipulating
 
 '''
 
 with open("interfaces.json") as data:
     interfacedata = data.read()
 
-#Print raw JSON data
+with open("interfaces.json") as data:
+    interfacedata2 = json.load(data) #load in json data straight into a dict
+
+#Print raw JSON data string
 print(interfacedata)
+print('type of interfacedata json:', type(interfacedata))
+print(interfacedata2)
+print('type of interfacedata2 json:', type(interfacedata2))
 
 #Convert JSON data into a dictionary
-interfaces_dict = json.loads(interfacedata)
-print(type(interfaces_dict))
+interfaces_dict = json.loads(interfacedata) #uses loads because interfacedata is a string
+print('type of interface_dict after using loads function:', type(interfaces_dict))
 print()
 
 #Print interfaces dictionary
@@ -137,7 +145,7 @@ print()
 
 # Working with XML natively is confusing with Python and can be hard to grasp.
 # xmltodict is a module that can be used to convert XML to a special dictinary that does not allow elements to change order
-# Order matters in XML
+# Order DOES MATTER in XML
 
 with open ("interfaces.xml") as data:
     xml_example = data.read()
@@ -191,7 +199,7 @@ yaml_dict["interfaces"]["interface1"]["description"] = "Modified main uplink"
 yaml_dict["interfaces"]["interface2"]["description"] = "Modified backup uplink"
 
 #Print Yaml dict after modifying
-print(yaml_dict)
+print('Dict after change:',yaml_dict)
 print()
 
 #Writing back to file
