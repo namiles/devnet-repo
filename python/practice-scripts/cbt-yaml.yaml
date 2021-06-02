@@ -1,0 +1,22 @@
+---
+#comments work in YAML
+people:
+  - id: 1
+    code: 424.37
+    firstName: John
+    lastName: Doe
+    email: jdoe@example.com
+    Active: true
+  - id: 2
+    code: 584.32
+    firstName: Jane
+    lastName: Doe
+    email: jane.doe@example.com
+    Active: true
+  - id: 3
+    code: 544.37
+    firstName: Jimmy
+    lastName: Doe
+    email: jim.doe@example.com
+    Active: false
+...

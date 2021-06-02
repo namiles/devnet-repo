@@ -1,6 +1,5 @@
 import requests
 import json
-import sys
 
 #Allow self signed certificates
 requests.packages.urllib3.disable_warnings()

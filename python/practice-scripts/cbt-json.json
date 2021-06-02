@@ -1,0 +1,26 @@
+{
+    "People":
+    [
+        {
+            "ID":1,
+            "firstName":"John",
+            "lastName": "Doe",
+            "email":"jdoe@example.com",
+            "Active": true
+        },
+        {
+            "ID":2,
+            "firstName":"Jane",
+            "lastName": "Doe",
+            "email":"jane.doe@example.com",
+            "Active": true
+        },
+        {
+            "ID":3,
+            "firstName":"Jimmy",
+            "lastName": "Doe",
+            "email":"jimmy.doe@example.com",
+            "Active": false
+        }
+    ]
+}
