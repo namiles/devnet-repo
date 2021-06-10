@@ -2,10 +2,10 @@ import meraki
 
 X_CISCO_MERAKI_API_KEY = "6bec40cf957de430a6f1f2baa056b99a4fac9ea0" #read-only sandbox key
 dashboard = meraki.DashboardAPI(X_CISCO_MERAKI_API_KEY)
-organizationsList = dashboard.organizations.getOrganizations()
 
 print()
 
+organizationsList = dashboard.organizations.getOrganizations()
 for org in organizationsList:
     if(org['id'] == '549236'): #if id equals ID of offical devnet sandbox
         #Save Id of devnet sandbox organization
