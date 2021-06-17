@@ -8,7 +8,6 @@ PORT = 10000
 USER = 'developer'
 PASS = 'C1sco12345'
 
-
 def main():
     # Connects using the NETCONF protocol
     with manager.connect(host=HOST, port=PORT, username=USER,
@@ -19,7 +18,6 @@ def main():
         # print all NETCONF capabilities
         for capability in m.server_capabilities:
             print(capability.split('?')[0])
-
 
 if __name__ == '__main__':
     sys.exit(main())

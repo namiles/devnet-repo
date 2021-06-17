@@ -1,7 +1,5 @@
 from ncclient import manager
-import xml.dom.minidom
 import xmltodict
-import pprint
 import sys
 from routers import router1
 
