@@ -7,7 +7,7 @@ def main():
 
     netconf_filter = open("interfaces_filter.xml").read()
     netconf_config_template = open("interfaces_config.xml").read()
-    netconf_config = netconf_config_template.format(interface_name="GigabitEthernet2", interface_desc="Network Interface")
+    netconf_config = netconf_config_template.format(interface_name="GigabitEthernet2", interface_desc="edited with netconf but idk what im doing lol")
 
     # Connects using the NETCONF protocol
     with manager.connect(host=router1['HOST'], port=router1['PORT'], username=router1['USER'],

@@ -9,6 +9,9 @@ USER = 'developer'
 PASS = 'C1sco12345'
 
 def main():
+    get_capabilties()
+
+def get_capabilties():
     # Connects using the NETCONF protocol
     with manager.connect(host=HOST, port=PORT, username=USER,
                          password=PASS, hostkey_verify=False,
