@@ -1,16 +1,12 @@
 import requests
-from requests.models import HTTPBasicAuth
 
-# Function to get access token from DNAC sandbox
-def get_token():
-    url = 'https://sandboxdnac.cisco.com/dna/system/api/v1/auth/token'
-    user = 'devnetuser'
-    password = 'Cisco123!'
-    headers = {'content-type': 'application/json'},
-    token = requests.post(url, auth=HTTPBasicAuth(username=user, password=password), headers=headers, verify=False,)
-    data = token.json()
-    print(data)
-    return data['Token']
+url = "https://sandboxdnac.cisco.com/dna/intent/api/v1/auth/token"
 
-token = get_token
-print(token)
+payload={}
+headers = {
+  'Authorization': 'Basic ZGV2bmV0dXNlcjpDaXNjbzEyMyE='
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)
