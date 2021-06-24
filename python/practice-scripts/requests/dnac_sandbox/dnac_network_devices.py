@@ -1,14 +1,30 @@
 import requests
 import json
 
+################ LOGIN ######################
+url = "https://sandboxdnac.cisco.com/dna/system/api/v1/auth/token"
+
+user = 'devnetuser'
+pw = 'Cisco123!'
+
+response = requests.post(url, auth=(user, pw)).json()
+# print(response)
+token = response['Token']
+
 url = "https://sandboxdnac.cisco.com/dna/intent/api/v1/network-device"
 
 headers = {
-    "X-Auth-Token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDJjMGUyODE0NzEwYTIyZDFmN2UxNzIiLCJhdXRoU291cmNlIjoiaW50ZXJuYWwiLCJ0ZW5hbnROYW1lIjoiVE5UMCIsInJvbGVzIjpbIjYwMmJlYmU1MTQ3MTBhMDBjOThmYTQwOSJdLCJ0ZW5hbnRJZCI6IjYwMmJlYmU1MTQ3MTBhMDBjOThmYTQwMiIsImV4cCI6MTYyNDQxNTYyOSwiaWF0IjoxNjI0NDEyMDI5LCJqdGkiOiI4MTQ5MjBkMy1hYTdkLTRhMDQtYTEzNC00YjFjZmIzNThhNGEiLCJ1c2VybmFtZSI6ImRldm5ldHVzZXIifQ.iuf-lV6HcaPAWKTYp1sM6YpIkMMqGATW81RBo9IePRy54lFmuJwCkR-Jm0cOdz9yAZU8edDf2MEaKYoDSSrLe4wHt2ClRiIzYNmfFNkwtrZegz2hukGjw0Kyc8PTCfEUNQ6VtcOhEgRMiYRUzDH1x2gtCck5XjAR35ELmge7ekCOXgKc1Fxgu3zgt0b5x8gm1OoG2UToQKNyhSc-NHG1eTVyhjX_yjv_iSI7Led8BhSruK9BiRrnCZhSuvQoBRm_rqS70HRM-DxrJ8qgByg60i597dAJ1YSEKjAcISv7lshUDMRRxQb04dpqhFnJxUlTi_5oJI1mK5Yzcu68389G2w"
+    "X-Auth-Token": token
 }
 
 response = requests.get(url, headers=headers)
-jsonData = response.json()
-prettyJsonData = json.dumps(jsonData, indent=2)
 
-print(prettyJsonData)
+if response.status_code == 200:
+    jsonData = response.json()
+    prettyJsonData = json.dumps(jsonData, indent=2)
+    print(prettyJsonData)
+else:
+    # Oops something went wrong...  Better do something about it.
+    print("\nError ocurred. See below.")
+    print(response.status_code, response.text)
+
