@@ -24,6 +24,12 @@ print(device)
 print('\n','*' * 80, '\n')
 
 #Clients
-
 clients = api.clients.get_overall_client_health()
-print(clients)
+print(json.dumps(clients, indent=4))
+
+print('\n','*' * 80, '\n')
+
+#Networks
+networks = api.networks.get_overall_network_health()
+print(networks)
+
