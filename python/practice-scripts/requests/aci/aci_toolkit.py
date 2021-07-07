@@ -55,5 +55,8 @@ for tenant in tenants:
     print('*' * 30)
     print(' ')
 
+# app_profiles = AppProfile.get(session, new_tenant)
+# print(app_profiles[0])
+
 # new_tenant.mark_as_deleted()
 # session.push_to_apic(new_tenant.get_url(), new_tenant.get_json())
