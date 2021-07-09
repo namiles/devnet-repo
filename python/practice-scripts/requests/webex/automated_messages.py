@@ -1,7 +1,7 @@
 import requests
 import json
 
-token = 'YzkxMzU2NjMtZWMyMy00ZTJhLThmNWYtM2EzZWUzYjE5ZDg0ZjUwMDQzYWYtNWEw_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3'
+token = 'NjNjNjVjODctM2Q1Ny00ZTc1LTk0YzUtMDgxYWMwNjExYzdhZGVjZWVjZjUtMDEx_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3'
 headers = {
     'Authorization': f'Bearer {token}',
     'Content-Type': 'application/json'
@@ -29,8 +29,8 @@ msg_payload = {
     'roomId':roomId,
     'text':'ALERT: This was posted to this room using the roomId and Python requests library!'
 }
-# msg_response = requests.post(msg_url, headers=headers, data=json.dumps(msg_payload)).json()
-# print(json.dumps(msg_response))
+msg_response = requests.post(msg_url, headers=headers, data=json.dumps(msg_payload)).json()
+print(json.dumps(msg_response))
 
 # for x in range(1,21):
 #     msg_payload = {

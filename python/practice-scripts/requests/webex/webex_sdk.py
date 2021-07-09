@@ -1,7 +1,6 @@
 from webexteamssdk import WebexTeamsAPI
-from webexteamssdk.api import people
 
-api = WebexTeamsAPI(access_token='YzkxMzU2NjMtZWMyMy00ZTJhLThmNWYtM2EzZWUzYjE5ZDg0ZjUwMDQzYWYtNWEw_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3')
+api = WebexTeamsAPI(access_token='NjNjNjVjODctM2Q1Ny00ZTc1LTk0YzUtMDgxYWMwNjExYzdhZGVjZWVjZjUtMDEx_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3')
 
 '''
 Team Info
@@ -17,8 +16,20 @@ for team in teams:
 People
 '''
 print(api.people.me())
-emails = [
-    'nick@nickmiles.me'
-]
-api.people.create(emails=emails, displayName='Nick Test', firstName='Nick', lastName='Test') # only email is required
-print(api.people.get(email='nick@nickmiles.me'))
+# emails = [
+#     'nick@nickmiles.me'
+# ]
+# api.people.create(emails=emails, displayName='Nick Test', firstName='Nick', lastName='Test') # only email is required
+# print(api.people.get(email='nick@nickmiles.me'))
+ 
+
+'''
+Teams
+'''
+
+'''
+Roles
+'''
+roles = api.roles.list() 
+for role in roles:
+    print(role)
