@@ -1,14 +1,15 @@
 import requests
 import json
+from webex_urls import webex_urls
 
 '''
 Token retrieves from developer.cisco.com in "Getting Started" section
 Lasts 12 hours
 '''
-token = 'NjNjNjVjODctM2Q1Ny00ZTc1LTk0YzUtMDgxYWMwNjExYzdhZGVjZWVjZjUtMDEx_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3'
+token = 'OTJmZmI2MzctZDRmNS00OWE1LTgwNDktMDk0YmE1N2ViNThjNjgwYTU3MTgtNDY4_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3'
 
 # Creating a Team via Rest API
-url = 'https://api.ciscospark.com/v1/teams'
+url = webex_urls['teams_url']
 headers = {
     'Authorization': f'Bearer {token}',
     'Content-Type': 'application/json'
@@ -32,7 +33,7 @@ print('Devnet Pupils team ID:', teamId, '\n')
 '''
 Creating a Room
 '''
-room_url = 'https://api.ciscospark.com/v1/rooms'
+room_url = webex_urls['rooms_url']
 # room_payload = {
 #     'title':'Automating Webex Section',
 #     'teamId':teamId

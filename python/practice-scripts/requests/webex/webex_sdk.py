@@ -1,6 +1,6 @@
 from webexteamssdk import WebexTeamsAPI
 
-api = WebexTeamsAPI(access_token='NjNjNjVjODctM2Q1Ny00ZTc1LTk0YzUtMDgxYWMwNjExYzdhZGVjZWVjZjUtMDEx_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3')
+api = WebexTeamsAPI(access_token='OTJmZmI2MzctZDRmNS00OWE1LTgwNDktMDk0YmE1N2ViNThjNjgwYTU3MTgtNDY4_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3')
 
 '''
 Team Info

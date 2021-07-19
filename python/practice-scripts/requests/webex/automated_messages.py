@@ -1,12 +1,13 @@
 import requests
 import json
+from webex_urls import webex_urls
 
-token = 'NjNjNjVjODctM2Q1Ny00ZTc1LTk0YzUtMDgxYWMwNjExYzdhZGVjZWVjZjUtMDEx_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3'
+token = 'OTJmZmI2MzctZDRmNS00OWE1LTgwNDktMDk0YmE1N2ViNThjNjgwYTU3MTgtNDY4_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3'
 headers = {
     'Authorization': f'Bearer {token}',
     'Content-Type': 'application/json'
 }
-room_url = 'https://api.ciscospark.com/v1/rooms'
+room_url = webex_urls['rooms_url']
 
 '''
 Get Room ID
@@ -24,10 +25,10 @@ print('\n', roomId)
 '''
 Posting Messages
 '''
-msg_url = 'https://api.ciscospark.com/v1/messages'
+msg_url = webex_urls['messages_url']
 msg_payload = {
     'roomId':roomId,
-    'text':'ALERT: This was posted to this room using the roomId and Python requests library!'
+    'text':'ALERT: Testing URLS'
 }
 msg_response = requests.post(msg_url, headers=headers, data=json.dumps(msg_payload)).json()
 print(json.dumps(msg_response))
