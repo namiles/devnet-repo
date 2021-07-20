@@ -3,8 +3,13 @@ import xmltodict
 import sys
 from routers import router1
 
-def main():
+# <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces"> Interfaces container
+#     <interface> Interface list
+#         <name>GigabitEthernet2</name> key
+#     </interface>
+# </interfaces>
 
+def main():
     netconf_filter = open("interfaces_filter.xml").read()
     netconf_config_template = open("interfaces_config.xml").read()
     netconf_config = netconf_config_template.format(interface_name="GigabitEthernet2", interface_desc="edited with netconf but idk what im doing lol")
@@ -23,6 +28,7 @@ def main():
 
         #Use XMLtodict to convert the interface data to parsible dict
         interface_dict = xmltodict.parse(interface_netconf.xml)['rpc-reply']['data'] #have to add on .xml
+        print(interface_dict)
         
         #create objects for config and op state data
         config = interface_dict['interfaces']['interface']

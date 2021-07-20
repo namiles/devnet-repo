@@ -21,7 +21,7 @@ def main():
         allow_agent=False) as m:
 
         #Get interface data using get with netconf filter
-        interface_netconf = m.get(netconf_filter)
+        interface_netconf = m.get(netconf_filter) # uses the <get> netconf RPC
         print() #spacing
         print('Type of interface config:', type(interface_netconf))
         xml_doc = xml.dom.minidom.parseString(str(interface_netconf))
