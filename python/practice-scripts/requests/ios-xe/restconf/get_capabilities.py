@@ -6,7 +6,8 @@ from routers import router1
 requests.packages.urllib3.disable_warnings()
 
 # http://<ip addres>:<port>/<root>/<data store>/<[yang-module]:container>/<leaf>?=options
-url = f"https://{router1['HOST']}:{router1['PORT']}/restconf/data/Cisco-IOS-XE-interfaces-oper:interfaces/interface=Loopback55"
+url = f"https://{router1['HOST']}:{router1['PORT']}/restconf/data/netconf-state/capabilities"
+root_url = f"https://{router1['HOST']}:{router1['PORT']}/.well-known/host-meta"
 
 headers = {
   'Content-Type': 'application/yang-data+json',
@@ -24,15 +25,9 @@ if response.ok:
   print(json.dumps(response_json, indent=4))
 
   print('\n', '*' * 100, '\n', sep="")
-
-  print(f"Interface: {response_json['Cisco-IOS-XE-interfaces-oper:interface']['name']}")
-  print(f"Description: {response_json['Cisco-IOS-XE-interfaces-oper:interface']['description']}")
-  print(f"IPv4 Address: {response_json['Cisco-IOS-XE-interfaces-oper:interface']['ipv4']}")
-  if response_json['Cisco-IOS-XE-interfaces-oper:interface']['admin-status'] == 'if-state-up':
-      print("Admin State: Up")
-  else:
-      print("Admin State: Down")
-
-  print('\n', '*' * 100, '\n', sep="")
 else:
   print(f"Error occurred with status code {response.status_code}")
+
+root_response = requests.get(root_url, headers=headers, verify=False, auth=(router1['USER'], router1['PASS']))
+print(root_response.status_code)
+print(root_response.text)

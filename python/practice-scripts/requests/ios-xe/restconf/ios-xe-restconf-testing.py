@@ -15,22 +15,25 @@ headers = {
 #Run GET
 response = requests.get(url, auth=(router1['USER'], router1['PASS']), headers=headers, verify=False)
 
-print('\n', '*' * 100, '\n', sep="")
+if response.ok:
+  print('\n', '*' * 100, '\n', sep="")
 
-print(response.json())
-print(type(response.json()))
+  print(response.json())
+  print(type(response.json()))
 
-print('\n', '*' * 100, '\n', sep="")
+  print('\n', '*' * 100, '\n', sep="")
 
-interface_data = response.json()
-print(type(interface_data))
+  interface_data = response.json()
+  print(type(interface_data))
 
-print('\n', '*' * 100, '\n', sep="")
+  print('\n', '*' * 100, '\n', sep="")
 
-interface_data_formatted = json.dumps(response.json(), indent=2)
-print(interface_data_formatted)
-print(type(interface_data_formatted))
+  interface_data_formatted = json.dumps(response.json(), indent=2)
+  print(interface_data_formatted)
+  print(type(interface_data_formatted))
 
-print('\n', '*' * 100, '\n', sep="")
+  print('\n', '*' * 100, '\n', sep="")
+else:
+  print(f"Error occurred with status code {response.status_code}")
 
 

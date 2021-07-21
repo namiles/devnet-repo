@@ -14,7 +14,7 @@ payload = json.dumps({
   "aaaUser": {
     "attributes": {
       "name": "admin",
-      "pwd": "ciscopsdt"
+      "pwd": "!v3G@!4@Y"
     }
   }
 })
