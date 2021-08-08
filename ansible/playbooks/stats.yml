@@ -1,0 +1,11 @@
+---
+- name: Get stats and write to desktop
+  #hosts to run this playbook on
+  hosts: linuxservers
+  tasks:
+      #name of first task to run
+    - name: get system status and info
+      #specify module name to use
+      shell: uname -a > /home/nmiles/Desktop/output.txt
+    - name: print username
+      shell: whoami >> /home/nmiles/Desktop/output.txt

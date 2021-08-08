@@ -1,0 +1,9 @@
+---
+- name: playbook with variable demos
+  hosts: linuxservers
+  vars:
+    - var1: zig
+    - var2: zag
+  tasks:
+    - name: print data
+      shell: echo "{{var1}} when yhou should {{var2}}" > /home/nmiles/Desktop/variables.txt
