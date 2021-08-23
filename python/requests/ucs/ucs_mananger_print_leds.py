@@ -1,5 +1,6 @@
 from ucsmsdk.ucshandle import UcsHandle
-# help(UcsHandle)
+handle = UcsHandle("10.10.20.110", "ucspe", "ucspe")
+handle.login()
 
 '''
 UCS Manager has five query methods:
@@ -20,30 +21,11 @@ UCS Manager has five query methods:
         Returns a list of zero or more objects
 '''
 
-#Reservation sandbox
-handle = UcsHandle("10.10.20.110", "ucspe", "ucspe")
+compute_resources = handle.query_classids("ComputeBlade", "ComputeRackUnit")
 
-handle.login()
-# DOCUMENTATION https://github.com/CiscoUcs/ucsmsdk https://ucsmsdk.readthedocs.io/en/latest/
+for compute_resource_class in compute_resources:
+    for compute_resource in compute_resources[compute_resource_class]:
+        leds = handle.query_children(in_dn=compute_resource.dn, class_id="equipmentLocatorLed")
+        print(compute_resource.dn, leds[0].oper_state) #will always be 0 because there is only one object in the list
 
-#ORG INFO
-org = handle.query_classid(class_id="orgOrg", hierarchy=True)
-print(org)
-
-# Server Blade info
-servers = handle.query_classid("computeBlade")
-
-# print(srv)
-for server in servers:
-    print(server)
-
-for server in servers:
-    print(server.dn, server.num_of_cpus, server.available_memory)
-
-# Specific DN query
-blade = handle.query_dn('sys/chassis-3/blade-1')
-print(blade)
-
-# Logout
 handle.logout()
-
