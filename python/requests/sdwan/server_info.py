@@ -1,6 +1,8 @@
 import requests
 import sys
 import json
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 auth_url = 'https://sandbox-sdwan-1.cisco.com/j_security_check'
 login_body = {
