@@ -25,7 +25,6 @@ for tenant in tenants:
 # Create a new Tenant
 new_tenant = Tenant("nick_python_tenant")
 
-
 # Create the application profile and the EPG
 anp = AppProfile('Nicks_app', new_tenant)
 epg = EPG('Nicks_epg', anp)
@@ -44,8 +43,7 @@ epg.add_bd(bridge_domain)
 ##### Tenant Creation is completed #####
 print(new_tenant.get_url())
 print(new_tenant.get_json())
-response = session.push_to_apic(
-    new_tenant.get_url(), data=new_tenant.get_json())
+response = session.push_to_apic(new_tenant.get_url(), data=new_tenant.get_json())
 print(response)
 
 tenants = Tenant.get(session)

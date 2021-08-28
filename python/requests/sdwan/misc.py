@@ -1,6 +1,6 @@
 import requests
 import sys
-# import json
+import json
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -9,14 +9,9 @@ login_body = {
     'j_username':'devnetuser',
     'j_password':'RG!_Yw919_83'
 }
-print(type(login_body))
 
-'''
-The Session object allows you to persist certain parameters across requests. 
-It also persists cookies across all requests made from the Session instance, 
-and will use urllib3’s connection pooling.
-'''
 session = requests.session()
+#login post
 response = session.post(auth_url, data=login_body, verify=False) #post in the actual python dictionary, not a converted string with dumps
 
 '''
@@ -30,13 +25,14 @@ else:
     print('log in successful\n')
 
 # Get Devices
-device_url = 'https://sandbox-sdwan-1.cisco.com/dataservice/device/monitor'
-device_response = session.get(device_url, verify=False).json()['data']
+user_url = 'https://sandbox-sdwan-1.cisco.com/dataservice/admin/user'
+user_response = session.get(user_url, verify=False).json()['data']
 # print(json.dumps(device_response, indent=4))
-for device in device_response:
-    print("-" * 50)
-    print(f'Hostname: {device["host-name"]}')
-    print(f'IP: {device["system-ip"]}')
-    print(f'Model: {device["device-model"]}')
-    print(f'Status: {device["status"]}')
-    print("")
+for user in user_response:
+    if user["userName"] == "devnetuser":
+        print(user["description"])
+        user["description"] = "hello changed with python"
+
+print(json.dumps(user_response, indent=4))
+post_user_response = session.post(user_url, data=json.dumps(user_response), verify=False)
+print(post_user_response)
