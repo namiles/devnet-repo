@@ -17,6 +17,7 @@ headers = {
 response = requests.get(url, headers=headers, verify=False, auth=(router1['USER'], router1['PASS']))
 
 if response.ok:
+  print(response)
   response_json = response.json()
   print(type(response_json))
 

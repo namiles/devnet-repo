@@ -4,6 +4,12 @@
             <name>{interface_name}</name>
             <description>{interface_desc}</description>
             <enabled>true</enabled>
+            <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+                 <address>
+                     <ip>{ip_address}</ip>
+                     <netmask>{mask}</netmask>
+                 </address>
+             </ipv4>
         </interface>
     </interfaces>
 </config>
