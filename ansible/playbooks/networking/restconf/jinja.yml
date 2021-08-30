@@ -7,3 +7,6 @@
     - name: Create loopback template
       with_items: "{{local_loopback}}"
       template: src="files/ietf_interface.j2" dest="./output.json"
+
+
+      

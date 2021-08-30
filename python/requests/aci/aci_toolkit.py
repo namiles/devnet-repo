@@ -6,7 +6,7 @@ from acitoolkit.acitoolkit import *
 
 url = 'https://sandboxapicdc.cisco.com'
 user = 'admin'
-pw = 'ciscopsdt'
+pw = '!v3G@!4@Y'
 
 # Create the session object
 session = Session(url, user, pw)

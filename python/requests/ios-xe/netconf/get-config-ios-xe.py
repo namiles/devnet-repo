@@ -30,5 +30,7 @@ def main():
 
         print('\n', '*' * 100, '\n', sep="")
 
+    m.close_session()
+
 if __name__ == '__main__':
     sys.exit(main())
