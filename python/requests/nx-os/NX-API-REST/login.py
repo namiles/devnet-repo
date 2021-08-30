@@ -3,16 +3,16 @@ import json
 
 def get_token():
     """
-    Returns token for interacting with NX-API REST in string format.
+    Returns token for interacting with NX-API REST.
     """
 
-    #Reservable NS-OX single node sandbox - developer.cisco.com
-    url = "https://10.10.20.58/api/aaaLogin.json"
+    # DevNet NX-OS always on Sandbox
+    url = "https://sandbox-nxos-1.cisco.com/api/aaaLogin.json"
     payload = json.dumps({
         "aaaUser": {
             "attributes": {
                 "name": "admin",
-                "pwd": "Cisco123"
+                "pwd": "Admin_1234!"
             }
         }
     })

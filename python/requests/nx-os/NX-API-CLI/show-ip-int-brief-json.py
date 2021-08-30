@@ -1,10 +1,10 @@
 import requests
 import json
 
-# DevNet Nexus 1 device reservation sandbox
-url = "http://10.10.20.58:80/ins"
+# DevNet NX-OS Always on Sandbox
+url = "https://sandbox-nxos-1.cisco.com:443/ins"
 uname = "admin"
-pw = "Cisco123"
+pw = "Admin_1234!"
 
 payload = json.dumps({
   "ins_api": {
@@ -21,5 +21,5 @@ headers = {
   'Content-Type': 'application/json',
 }
 
-response = requests.post(url, auth=(uname,pw), headers=headers, data=payload).json()
+response = requests.post(url, auth=(uname,pw), headers=headers, data=payload, verify=False).json()
 print(json.dumps(response, indent=2, sort_keys=True))

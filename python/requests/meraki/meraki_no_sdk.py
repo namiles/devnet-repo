@@ -1,8 +1,6 @@
 import requests
 import json
 
-from requests.api import head
-
 #read-only sandbox key
 X_CISCO_MERAKI_API_KEY = "6bec40cf957de430a6f1f2baa056b99a4fac9ea0"
 
