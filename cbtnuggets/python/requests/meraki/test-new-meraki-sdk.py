@@ -8,14 +8,22 @@ dashboard = meraki.DashboardAPI(X_CISCO_MERAKI_API_KEY)
 # Get list of orgs
 orgs = dashboard.organizations.getOrganizations()
 for org in orgs:
+    if org['id'] == "549236":
+        devnet_org = org['id']
     print(f"Org ID: {org['id']}, Org name: {org['name']}")
 
 print()
 
 # Get list of networks in devent sandbox org
-networks = dashboard.organizations.getOrganizationNetworks("549236")
+networks = dashboard.organizations.getOrganizationNetworks(devnet_org)
 for net in networks:
     print(f"Network ID: {net['id']}, Network name: {net['name']}")
+
+print()
+
+# dashboard.appliance.createNetworkApplianceVlan("L_646829496481105433", "512","sdk vlan")
+# vlans = dashboard.appliance.getNetworkApplianceVlans("L_646829496481105433")
+# print(vlans)
 
 print()
 
