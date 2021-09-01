@@ -1,3 +1,0 @@
-newfeature branch text
-testing git diff
-testing git diff 2

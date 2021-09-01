@@ -6,7 +6,7 @@ from webex_urls import webex_urls
 Token retrieves from developer.cisco.com in "Getting Started" section
 Lasts 12 hours
 '''
-token = 'OTJmZmI2MzctZDRmNS00OWE1LTgwNDktMDk0YmE1N2ViNThjNjgwYTU3MTgtNDY4_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3'
+token = "NWFmZjM2Y2MtODA5ZC00NTkwLThiMjYtZmM5ZmNmMTFlZjUwMzQ2ZGYwYWMtNWRj_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3"
 
 # Creating a Team via Rest API
 url = webex_urls['teams_url']
@@ -16,7 +16,7 @@ headers = {
 }
 
 payload = {
-    'name':'Devnet Pupils'
+    'name':'Exam Tonight'
 }
 
 # post_response = requests.post(url, data=json.dumps(payload), headers=headers).json()
@@ -25,29 +25,29 @@ payload = {
 get_response = requests.get(url, headers=headers).json()
 teams = get_response['items']
 for team in teams:
-    if team['name'] == 'Devnet Pupils':
+    if team['name'] == 'Exam Tonight':
         teamId = team['id']
-print('Devnet Pupils team ID:', teamId, '\n')
+print('Exam Tonight team ID:', teamId, '\n')
 
 
 '''
 Creating a Room
 '''
 room_url = webex_urls['rooms_url']
-# room_payload = {
-#     'title':'Automating Webex Section',
-#     'teamId':teamId
-# }
-# room_response = requests.post(room_url, headers=headers, data=json.dumps(room_payload)).json()
-# print(json.dumps(room_response, indent=4), '\n')
+room_payload = {
+    'title':'Practicing for exam tonight3',
+    # 'teamId':teamId
+}
+room_response = requests.post(room_url, headers=headers, data=json.dumps(room_payload)).json()
+print(json.dumps(room_response, indent=4), '\n')
 
-for x in range(1,11):
-    room_payload = {
-        'title':f'Room #{x}',
-        'teamId':teamId
-    }
-    room_response = requests.post(room_url, headers=headers, data=json.dumps(room_payload)).json()
-    print(json.dumps(room_response, indent=4), '\n')
+# for x in range(1,11):
+#     room_payload = {
+#         'title':f'Room #{x}',
+#         'teamId':teamId
+#     }
+#     room_response = requests.post(room_url, headers=headers, data=json.dumps(room_payload)).json()
+#     print(json.dumps(room_response, indent=4), '\n')
     
 
 

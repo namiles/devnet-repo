@@ -1,0 +1,53 @@
+Default
+---------
+curl https://www.nickmiles.me --> returns the webpage
+
+
+Redirects
+----------
+To follow through with a redirect, you must add the -L tick.
+For example 'curl http://www.nickmiles.me' will not return the correct data because my website redirects with https
+so, you'd need to do 'curl -L http://www.nickmiles.me'
+
+
+HTTP Method
+------------
+-X tick is used to specify HTTP request method
+'curl -X POST {url}'
+
+
+Authentication
+--------------
+If URI requires basic authentication, you can use -u :user:pass.
+
+
+Headers
+--------
+Headers can be added to a request using the -H tick.
+
+
+Ignoring HTTPs certificates
+----------------------------
+-insecure can be used to ignore HTTPS certificate validation. Similar to verify=false in python requests.
+
+
+POSTing data
+-------------
+Data can be sent in a POST request using the -d (data) tick. Can either be data specified in the request or a file.
+curl -d '{"option": "value", "something": "anothervalue"}' -H "Content-Type: application/json" -X POST https://flaviocopes.com/
+OR
+curl -d "@my-file.json" -X POST https://flaviocopes.com/
+
+
+Response Headers
+-----------------
+The -I tick will return the HTTP request response headers
+'curl -I https://www.nickmiles.me'
+
+
+Storing Responses in a file
+----------------------------
+Responses can be stored using the -o ticket followed by the filename
+'curl -o index.html https://www.nickmiles.me'
+
+
