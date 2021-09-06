@@ -26,26 +26,43 @@ print("-" * 80)
 print(b'hello')
 print(type(b'hello'))
 
-print("-" * 80)
+print("\nLists",  "-" * 80)
 
-# Lists - mutable, sequences of objects
+##### Lists - mutable, sequences of objects #####
 list1 = [1,2,3]
 list2 = ["apple", "orange", "banana"]
 list3 = [1, "apple", {"name":"nick"}]
 print(list3[2]["name"])
+# Negatives indexes are used to access the last objects in a list
+print("Last object:",list2[-1])
+print("Second to last object:",list2[-2])
+# .index() function can be used to find location of an object in the list.
+# Compares passed in object equivalence for each item in the list until is is equal
+print(list2.index("orange"))
 
-print("-" * 80)
 
-# Dicts - maps keys to values 
+print("\nDicts", "-" * 80)
+
+##### Dicts - maps keys to values #####
 dict1 = {
     "key1":"value1",
     "key2":"value2",
 }
+# Values are accessible by keys
+# Keys must be unique in a single dictionary
+# Keys must be immutable
+# Values can be immutable
+# Order is not important in dicts
 print(dict1["key1"])
+#the dict constructor can be used to convert to dictionaries:
+names_and_ages = [('Alice', 32), ('Bob', 24), ('Charlies', 42)]
+print(names_and_ages)
+converted_dict = dict(names_and_ages)
+print(converted_dict)
 
-print("-" * 80)
+print("\nTuples", "-" * 80)
 
-# Tuples - immutable sequences of objects, cannot be changed once created
+##### Tuples - immutable sequences of objects, cannot be changed once created #####
 # Tuples can contain any object
 tuple1 = ("this", "this", "a", "tuple", 1)
 print(tuple1)
@@ -62,6 +79,20 @@ tuple3 = (746,)
 print("Tuple3 type:",type(tuple3))
 empty_tuple = ()
 print(type(empty_tuple))
+
+
+print("\nSets", "-" * 80)
+
+##### Sets - unordered collection of unique elements #####
+# sets are mutable
+# Elements in a set must be immutable
+set1 = {6, 28, 496, 8128}
+print(set1)
+# Must uses set() constructor to create an empty set since dicts also use {}
+not_a_set = {} # empty dict
+print(type(not_a_set))
+set2 = set() #empty set
+print(type(set2))
 
 print("-" * 80)
 

@@ -16,8 +16,8 @@ yaml_dict = yaml.load(yaml_sample, Loader=yaml.FullLoader)
 print()
 
 #Print Yaml dict
-print(yaml_dict)
 print("Type after converting:",type(yaml_dict))
+print(yaml_dict)
 print()
 
 #Modifying Data

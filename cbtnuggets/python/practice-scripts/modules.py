@@ -1,4 +1,4 @@
-# Classes are defined starting with the Class keyword
+# Classes are defined starting with the Class keyword, camel case
 class Router:
     '''Class used to describe routers'''
     def __init__(self, model, swversion, ip_address, location): # double underscore methods are known as dunder/magic method

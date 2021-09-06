@@ -11,6 +11,9 @@ if bool("hello"):
 if "hello":
     print("It's true")
 
+if 11:
+    print("11 is true!")
+
 c = 5
 while c != 0:
     print(c)
