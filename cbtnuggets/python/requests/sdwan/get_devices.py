@@ -9,28 +9,28 @@ login_body = {
     'j_username':'devnetuser',
     'j_password':'RG!_Yw919_83'
 }
-print(type(login_body))
 
 '''
 The Session object allows you to persist certain parameters across requests. 
 It also persists cookies across all requests made from the Session instance, 
 and will use urllib3’s connection pooling.
+These sessions are tracked by the client, not the API server as per API constraints.
 '''
 session = requests.session()
-response = session.post(auth_url, data=login_body, verify=False) #post in the actual python dictionary, not a converted string with dumps
+auth_response = session.post(auth_url, data=login_body, verify=False) #post in the actual python dictionary, not a converted string with dumps
 
 '''
 Response always returns 200 OK unless an errored occurs
 If the response body contains any text, then auth failed.
 '''
-if not response.ok or response.text:
+if not auth_response.ok or auth_response.text:
     print('login failed')
     sys.exit(1)
 else:
     print('log in successful\n')
 
 # Get Devices
-device_url = 'https://sandbox-sdwan-1.cisco.com/dataservice/device/monitor'
+device_url = 'https://sandbox-sdwan-1.cisco.com/dataservice/device'
 device_response = session.get(device_url, verify=False).json()['data']
 # print(json.dumps(device_response, indent=4))
 for device in device_response:

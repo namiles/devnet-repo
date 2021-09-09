@@ -52,7 +52,7 @@ print(json.dumps(ap_response, indent=4))
 payload = {
     "fvAp": {
         "attributes": {
-            "descr": "",
+            "descr": "Changed with REST API",
             "dn": "uni/tn-Heroes/ap-Save_The_Planet"
         }
     }
