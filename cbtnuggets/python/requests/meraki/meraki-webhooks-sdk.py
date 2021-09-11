@@ -22,23 +22,23 @@ print(cleanHttpServers)
 
 print()
 
-#Updating Alert settings/HTTP servers using PUT
-updateAlerts = dashboard.networks.updateNetworkAlertsSettings(
-    'L_646829496481105433',
-    defaultDestination = {
-        'emails': ['testupdate@example.com']
-    },
-    alerts = [{
-        'type':'gatewayDown',
-        'enable': True
-    }]
-)
+# #Updating Alert settings/HTTP servers using PUT
+# updateAlerts = dashboard.networks.updateNetworkAlertsSettings(
+#     'L_646829496481105433',
+#     defaultDestination = {
+#         'emails': ['testupdate@example.com']
+#     },
+#     alerts = [{
+#         'type':'gatewayDown',
+#         'enable': True
+#     }]
+# )
 
-network_id = 'L_646829496481104079'
-name = 'My HTTP server'
-url = 'https://www.example.com/webhooks'
+# network_id = 'L_646829496481104079'
+# name = 'My HTTP server'
+# url = 'https://www.example.com/webhooks'
 
-response = dashboard.http_servers.createNetworkHttpServer(
-    network_id, name, url, 
-    sharedSecret='foobar'
-)
+# response = dashboard.http_servers.createNetworkHttpServer(
+#     network_id, name, url, 
+#     sharedSecret='foobar'
+# )

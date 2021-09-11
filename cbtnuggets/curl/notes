@@ -6,6 +6,7 @@ curl https://www.nickmiles.me --> returns the webpage
 Redirects
 ----------
 To follow through with a redirect, you must add the -L tick.
+OR --location
 For example 'curl http://www.nickmiles.me' will not return the correct data because my website redirects with https
 so, you'd need to do 'curl -L http://www.nickmiles.me'
 
@@ -13,6 +14,7 @@ so, you'd need to do 'curl -L http://www.nickmiles.me'
 HTTP Method
 ------------
 -X tick is used to specify HTTP request method
+OR --request
 'curl -X POST {url}'
 
 
@@ -24,6 +26,7 @@ If URI requires basic authentication, you can use -u :user:pass.
 Headers
 --------
 Headers can be added to a request using the -H tick.
+OR --headers
 
 
 Ignoring HTTPs certificates
