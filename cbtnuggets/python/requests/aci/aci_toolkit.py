@@ -4,6 +4,7 @@ from acitoolkit.acitoolkit import *
 # See capabilities
 # dir()
 
+# Always-On DevNet Sandbox credentials (at time of writing)
 url = 'https://sandboxapicdc.cisco.com'
 user = 'admin'
 pw = '!v3G@!4@Y'
@@ -31,6 +32,7 @@ epg = EPG('Nicks_epg', anp)
 
 # Create the L3 Namespace
 # Parent of context and bridge domain is the tenant
+# context = vrf
 context = Context('Nicks_VRF', new_tenant)
 bridge_domain = BridgeDomain('Nicks_bd', new_tenant)
 
