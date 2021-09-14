@@ -2,7 +2,7 @@ import requests
 import json
 from webex_urls import webex_urls
 
-token = 'NWFmZjM2Y2MtODA5ZC00NTkwLThiMjYtZmM5ZmNmMTFlZjUwMzQ2ZGYwYWMtNWRj_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3'
+token = 'NDA4MDE0ZTItZTE2MC00MGMwLTk3NWEtZGU0NjRkNTliOTBmYzIzNzlmNGYtNmM4_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3'
 headers = {
     'Authorization': f'Bearer {token}',
     'Content-Type': 'application/json'
@@ -19,6 +19,7 @@ for room in rooms:
     print(room['title'])
     if room['title'] == 'Automating Webex Section':
         roomId = room['id']
+        break
 
 print('\n', roomId)
 
@@ -33,9 +34,16 @@ msg_payload = {
 msg_response = requests.post(msg_url, headers=headers, data=json.dumps(msg_payload)).json()
 print(json.dumps(msg_response))
 
-for x in range(1,21):
-    msg_payload = {
-        'roomId':roomId,
-        'text':f'ALERT: {x}'
-    }
-    msg_response = requests.post(msg_url, headers=headers, data=json.dumps(msg_payload)).json()
+# for x in range(1,21):
+#     msg_payload = {
+#         'roomId':roomId,
+#         'text':f'ALERT: {x}'
+#     }
+#     msg_response = requests.post(msg_url, headers=headers, data=json.dumps(msg_payload)).json()
+
+
+msg_payload = {
+    'roomId':roomId,
+    'text':f'ALERT: nmiles has pushed an update to master branch.'
+}
+msg_response = requests.post(msg_url, headers=headers, data=json.dumps(msg_payload)).json()
