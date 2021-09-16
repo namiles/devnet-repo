@@ -39,5 +39,4 @@ print('\n', '*' * 100, '\n', sep="")
 # You can then make a request with just the root to see top-level resources that are available
 top_url = f"https://{router1['HOST']}:{router1['PORT']}/restconf/"
 top_response = requests.get(top_url, headers=headers, verify=False, auth=(router1['USER'], router1['PASS'])).json()
-print(top_response.status_code)
 print(json.dumps(top_response, indent=4))
