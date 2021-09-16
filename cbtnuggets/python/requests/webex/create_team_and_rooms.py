@@ -6,7 +6,7 @@ from webex_urls import webex_urls
 Token retrieves from developer.cisco.com in "Getting Started" section
 Lasts 12 hours
 '''
-token = "NWFmZjM2Y2MtODA5ZC00NTkwLThiMjYtZmM5ZmNmMTFlZjUwMzQ2ZGYwYWMtNWRj_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3"
+token = "ODE2NDFlZDEtYzU2MS00ZDk0LThiOTYtODU5MGY5ZDJhZmVmYmU3NzYwNTItNTcw_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3"
 
 # Creating a Team via Rest API
 url = webex_urls['teams_url']
@@ -16,7 +16,7 @@ headers = {
 }
 
 payload = {
-    'name':'Exam Tonight'
+    'name':'Access OPs'
 }
 
 # post_response = requests.post(url, data=json.dumps(payload), headers=headers).json()
@@ -25,9 +25,9 @@ payload = {
 get_response = requests.get(url, headers=headers).json()
 teams = get_response['items']
 for team in teams:
-    if team['name'] == 'Exam Tonight':
+    if team['name'] == 'Access OPs':
         teamId = team['id']
-print('Exam Tonight team ID:', teamId, '\n')
+print('Access OPs team ID:', teamId, '\n')
 
 
 '''
@@ -35,8 +35,8 @@ Creating a Room
 '''
 room_url = webex_urls['rooms_url']
 room_payload = {
-    'title':'Practicing for exam tonight3',
-    # 'teamId':teamId
+    'title':'Daily Chat',
+    'teamId':teamId
 }
 room_response = requests.post(room_url, headers=headers, data=json.dumps(room_payload)).json()
 print(json.dumps(room_response, indent=4), '\n')
