@@ -1,7 +1,7 @@
 from ncclient import manager
 import sys
 
-HOST = 'sandbox-iosxe-recomm-1.cisco.com'
+HOST = 'sandbox-iosxe-latest-1.cisco.com'
 # use the NETCONF port for your IOS-XE device
 PORT = 830
 # use the user credentials for your IOS-XE device
