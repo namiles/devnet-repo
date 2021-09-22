@@ -9,7 +9,7 @@ Lasts 12 hours
 token = "ODE2NDFlZDEtYzU2MS00ZDk0LThiOTYtODU5MGY5ZDJhZmVmYmU3NzYwNTItNTcw_P0A1_262cf59f-1417-4dce-b04b-539e93368fe3"
 
 # Creating a Team via Rest API
-url = webex_urls['teams_url']
+url = webex_urls['teams_url'] 
 headers = {
     'Authorization': f'Bearer {token}',
     'Content-Type': 'application/json'

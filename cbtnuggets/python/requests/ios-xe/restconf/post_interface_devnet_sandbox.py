@@ -1,10 +1,11 @@
 import requests
 import json
+from routers import router1
 
 #Allow self signed certificates
 requests.packages.urllib3.disable_warnings()
 
-url = "https://ios-xe-mgmt.cisco.com:9443/restconf/data/ietf-interfaces:interfaces"
+url = f"https://{router1['HOST']}:{router1['PORT']}/restconf/data/ietf-interfaces:interfaces"
 
 payload = json.dumps({
   "ietf-interfaces:interface": {
@@ -29,5 +30,5 @@ headers = {
 }
 
 response = requests.post(url, headers=headers, data=payload, verify=False)
-
+print(response.status_code)
 print(response.text)

@@ -21,6 +21,9 @@ if response.ok:
 
   print('\n', '*' * 100, '\n', sep="")
 
+  with open("iosxe_capabilties.txt", "w") as file:
+    json.dump(response_json, file, indent=4)
+    
   print(json.dumps(response_json, indent=4))
 
   print('\n', '*' * 100, '\n', sep="")

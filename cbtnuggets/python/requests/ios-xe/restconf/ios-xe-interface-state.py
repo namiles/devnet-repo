@@ -6,8 +6,7 @@ from routers import router1
 requests.packages.urllib3.disable_warnings()
 
 # http://<ip addres>:<port>/<root>/<data store>/<[yang-module]:container>/<leaf>?=options
-url = f"https://{router1['HOST']}:{router1['PORT']}/restconf/data/Cisco-IOS-XE-interfaces-oper:interfaces/interface=Loopback55"
-
+url = f"https://{router1['HOST']}:{router1['PORT']}/restconf/data/Cisco-IOS-XE-interfaces-oper:interfaces/interface=Loopback1799"
 headers = {
   'Content-Type': 'application/yang-data+json',
   'Accept': 'application/yang-data+json',
