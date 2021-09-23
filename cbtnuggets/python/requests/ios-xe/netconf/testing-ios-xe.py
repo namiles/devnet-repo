@@ -22,12 +22,12 @@ def main():
 
         #Get interface data using get with netconf filter
         interface_netconf = m.get(netconf_filter) # uses the <get> netconf RPC
-        print() #spacing
-        print('Type of interface config:', type(interface_netconf))
-        xml_doc = xml.dom.minidom.parseString(str(interface_netconf))
-        print('Type of xml_doc after parsing with xml.dom.minidom: ', type(xml_doc))
-        print() #spacing
-        print(xml_doc.toprettyxml(indent="   "))
+        # print() #spacing
+        # print('Type of interface config:', type(interface_netconf))
+        # xml_doc = xml.dom.minidom.parseString(str(interface_netconf))
+        # print('Type of xml_doc after parsing with xml.dom.minidom: ', type(xml_doc))
+        # print() #spacing
+        # print(xml_doc.toprettyxml(indent="   "))
 
         print('*' * 100, '\n')
 

@@ -23,7 +23,7 @@ def main():
                          device_params={'name': 'default'},
                          look_for_keys=False, allow_agent=False) as m:
 
-        # Edit config using the config tempolate
+        # Edit config using the config template
         device_reply = m.edit_config(netconf_config, target="running")
         print(device_reply)
 
