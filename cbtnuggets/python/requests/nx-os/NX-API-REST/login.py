@@ -15,7 +15,7 @@ def get_token():
                 "pwd": "Admin_1234!"
             }
         }
-    })
+    }) 
     headers = {
     'Content-Type': 'application/json',
     }
