@@ -1,15 +1,12 @@
 ---
 - name: Gather IOS XE Facts
   hosts: sandbox-iosxe-latest-1.cisco.com
+  gather_facts: no
   connection: local
   tasks:
     - name: Gather IOS Facts
       ios_facts:
-        provider:
-          host: sandbox-iosxe-latest-1.cisco.com
-          port: 22
-          username: developer
-          password: C1sco12345
+        gather_subset: all
 
     - name: IOS OS Version?
       debug:

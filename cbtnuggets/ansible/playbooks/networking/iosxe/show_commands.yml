@@ -1,17 +1,12 @@
 ---
 - name: Run show commands
   hosts: sandbox-iosxe-latest-1.cisco.com
+  gather_facts: no
   connection: local
   tasks:
     - name: show ip int brief
       ios_command:
-        commands:
-          - show ip int brief
-        provider:
-          host: sandbox-iosxe-latest-1.cisco.com
-          port: 22
-          username: developer
-          password: C1sco12345
+        commands: show ip int brief
       register: interface_data
 
     - name: interface output

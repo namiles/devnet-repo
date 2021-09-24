@@ -8,16 +8,16 @@
       with_items: "{{local_loopback}}"
       nxos_interfaces:
         config:
-          name: "{{item.name}}"
-          description: "{{item.desc}}"
-          mode: layer3
-          admin_state: up
-
+          - name: "{{item.name}}"
+            description: "{{item.desc}}"
+            mode: layer3
+            enabled: yes
+ 
     - name: Set new loopback configs
       with_items: "{{local_loopback}}"
       nxos_l3_interfaces:
         config:
           - name: "{{item.name}}"
             ipv4: 
-            - address: "{{item.ip_address}}"
+              - address: "{{item.ip_address}}"
         state: merged

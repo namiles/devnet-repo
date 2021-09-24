@@ -4,7 +4,7 @@
   hosts: sandbox-iosxe-latest-1.cisco.com
   connection: local
   tasks:
-    - name: get some configs
+    - name: get interface configs
       restconf_get:
        content: config
        output: json
