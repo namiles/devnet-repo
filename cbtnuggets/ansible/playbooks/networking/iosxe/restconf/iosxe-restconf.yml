@@ -14,7 +14,7 @@
     - name: print output
       debug: msg="{{data_output}}"
     
-    #create template
+    #Create template
     - name: Create loopback template
       with_items: "{{local_loopback}}"
       template: src="files/ietf_interface.j2" dest="./output.json"

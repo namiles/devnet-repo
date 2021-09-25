@@ -11,7 +11,7 @@ ansible_password: "C1sco12345"
 local_loopback:
   - name: loopback820
     desc: "Created using Ansible and Restconf"
-    ip_address: 10.45.45.1
+    ip_address: 88.45.45.90
     prefix: 255.255.255.255
 
 # new_loop:
@@ -23,3 +23,4 @@ local_loopback:
 #         address:
 #           - ip: 10.99.99.1
 #             prefix: 255.255.255.0
+...
