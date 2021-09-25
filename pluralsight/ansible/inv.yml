@@ -1,0 +1,14 @@
+---
+all:
+  # Hosts are single hosts without goruping
+  # hosts:
+  #   sandbox-iosxe-latest-1.cisco.com:
+  # Cildren are grouped hosts
+  children:
+    routers:
+      hosts:
+        sandbox-iosxe-latest-1.cisco.com:
+
+# INI Format:
+# [routers]
+# sandbox-iosxe-latest-1.cisco.com

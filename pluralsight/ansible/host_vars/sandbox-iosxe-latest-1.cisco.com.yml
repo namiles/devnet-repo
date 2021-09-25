@@ -1,0 +1,9 @@
+---
+# ansible_connection: network_cli
+ansible_network_os: ios
+ansible_user: developer
+ansible_password: C1sco12345
+
+# Control server uses SSH to it is important to make sure SSH is set uo
+# and SSH keys are stored. This can be done by logging into the device 
+# using a tool such as Putty and saving the SSH key.

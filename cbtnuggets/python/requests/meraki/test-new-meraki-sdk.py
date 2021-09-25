@@ -31,3 +31,5 @@ print()
 devices = dashboard.networks.getNetworkDevices("L_646829496481105433")
 for dev in devices:
     print(f"Device model: {dev['model']}, Device serial: {dev['serial']}, Device MAC: {dev['mac']}")
+
+print()

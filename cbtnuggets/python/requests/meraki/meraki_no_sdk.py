@@ -26,12 +26,14 @@ if org_response.ok:
             print("ID:", org['id'])
     print()
     if devnet_org_id:
-        networks = requests.get(f"{base_url}/organizations/{devnet_org_id}/networks", headers=headers, verify=False)
+        networks = requests.get(f"{base_url}/organizations/{devnet_org_id}/networks", 
+                                headers=headers, verify=False)
         if networks.ok:
             networks = networks.json()
             for network in networks:
                 if network["name"] == "DevNet Sandbox ALWAYS ON":
                     devnet_network_id = network['id']
+                    print(network["name"])
                     print(devnet_network_id)
         else:
             print("Request for networks failed.")

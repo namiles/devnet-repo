@@ -1,0 +1,24 @@
+---
+- name: "PLAY 1: Retrieve Interfaces"
+  hosts: routers
+  # connection: network_cli -- Specified in host_vars file instead
+  tasks:
+    - name: "TASK 1: Retrieve interfaces using IOS command module"
+      ios_command:
+        commands: "show ip int brief"
+      register: interface_output
+
+    - name: "TASK 2: Print Interface Output"
+      debug:
+        msg: "{{interface_output['stdout_lines'][0]}}"
+
+    - name: "TASK 3: Create outputs folder"
+      file:
+        path: "outputs"
+        state: directory
+      run_once: true # Creates once rather than one for each host, if using a group
+    
+    - name: "TASK 4: Write output to file"
+      copy:
+        content: "{{interface_output['stdout_lines'][0]}} \n"
+        dest: "outputs/{{inventory_hostname}}.txt"

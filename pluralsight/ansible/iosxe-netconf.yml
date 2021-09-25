@@ -1,0 +1,13 @@
+---
+- name: "PLAY 1: Retrieve Running config"
+  hosts: routers
+  connection: netconf
+  tasks:
+    - name: "TASK 1: Retrieve Running Config using NETCONF"
+      netconf_get:
+        source: running
+      register: running_config_output
+
+    - name: "TASK 2: Print Running Config"
+      debug:
+        msg: "{{running_config_output}}"
